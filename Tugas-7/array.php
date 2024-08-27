@@ -21,6 +21,10 @@
         */
     $kids = ["Mike","Dustin","Will","Lucas","Max","Eleven"]; // Lengkapi di sini
     $adults = ["Hopper","Nancy","Joyce","Jonathan","Jonathan","Murray"];
+    echo "Kids: <br/>";
+    print_r($kids);
+    echo "<br/>Adults: <br/>";
+    print_r($adults);
     echo "<h3> Soal 2</h3>";
     /* 
             SOAL NO 2
@@ -117,34 +121,34 @@
         */
 
     $chars = [
-      [
+        [
         "Name" => "Will Byers",
         "Age" => 12,
         "Aliases" => "Will the Wise",
         "Status" => "Alive"
-      ],
-      [
+        ],
+        [
         "Name" => "Mike Wheeler",
         "Age" => 12,
         "Aliases" => "Dungeon Master",
         "Status" => "Alive"
-      ],
-      [
+        ],
+        [
         "Name" => "Jim Hopper",
         "Age" => 43,
         "Aliases" => "Chief Hopper",
         "Status" => "Deceased"
-      ],
-      [
+        ],
+        [
         "Name" => "Eleven",
         "Age" => 12,
         "Aliases" => "El",
         "Status" => "Alive"
-      ]
-      ];
-      echo "<pre>";
-      print_r($chars);
-      echo "</pre>";
+        ]
+        ];
+        echo "<pre>";
+        print_r($chars);
+        echo "</pre>";
     ?>
 </body>
 
