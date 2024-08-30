@@ -1,0 +1,82 @@
+Soal 1 Membuat Database
+CREATE DATABASE myshop;
+
+
+Soal 2 Membuat Table di dalam Database
+// Table users
+CREATE TABLE users (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+// Table categories
+CREATE TABLE categories (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255)
+);
+// Table items
+CREATE TABLE items (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    description VARCHAR(255),
+    price INTEGER,
+    stock INTEGER,
+    category_id INTEGER,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+
+
+Soal 3 Memasukkan data ke dalam Table 
+// Table users
+INSERT INTO users (name, email, password) VALUES ('John Doe', 'john@doe.com', 'john123');
+INSERT INTO users (name, email, password) VALUES ('Jane Doe', 'jane@doe.com', 'jenita123');
+// Table categories
+INSERT INTO categories (name) VALUES ('gadget');
+INSERT INTO categories (name) VALUES ('cloth');
+INSERT INTO categories (name) VALUES ('men');
+INSERT INTO categories (name) VALUES ('women');
+INSERT INTO categories (name) VALUES ('branded');
+// Table items
+INSERT INTO items (name, description, price, stock, category_id) VALUES
+('Sumsang b50', 'hape keren dari merek sumsang', 4000000, 100, 1),
+('Uniklooh', 'baju keren dari brand ternama', 500000, 50, 2),
+('IMHO Watch', 'jam tangan anak yang jujur banget', 2000000, 10, 1);
+
+
+
+Soal 4 mengambil data dan menampilkan data
+// Mengambil data dari table users
+SELECT id, name, email 
+FROM users;
+ - Buatlah sebuah query untuk mendapatkan data item pada table items yang memiliki harga di atas 1000000 (satu juta). 
+
+ SELECT * FROM items WHERE price > 1000000;
+
+ - Buat sebuah query untuk mengambil data item pada table items yang memiliki name serupa atau mirip (like) dengan kata kunci “uniklo”, “watch”, atau “sang” (pilih salah satu saja).
+
+ SELECT * FROM items WHERE name LIKE '%sang%';
+
+- Buatlah sebuah query untuk menampilkan data items yang dilengkapi dengan data nama kategori di masing-masing items (gunakan join). 
+
+SELECT 
+    items.name,
+    items.description,
+    items.price,
+    items.stock,
+    items.category_id,
+    categories.name AS kategori
+FROM 
+    items
+JOIN 
+    categories ON items.category_id = categories.id;
+
+
+
+Soal 5
+- Ubahlah data pada table items untuk item dengan nama sumsang b50 harganya (price) menjadi 2500000.
+
+UPDATE items SET price = 2500000 WHERE name = 'Sumsang b50';
+
+
