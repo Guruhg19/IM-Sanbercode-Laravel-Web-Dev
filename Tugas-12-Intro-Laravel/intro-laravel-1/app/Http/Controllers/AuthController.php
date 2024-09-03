@@ -11,6 +11,9 @@ class AuthController extends Controller
     }
 
     public function welcome(Request $request){
-        return view('home');
+        $namaDepan = $request->input('fname');
+        $namaBelakang = $request->input('lname');
+
+        return view('welcome',['namaDepan' =>$namaDepan, 'namaBelakang' =>$namaBelakang]);
     }
 }

@@ -12,12 +12,12 @@
         @csrf
         <label for="first-name">First Name : </label>
         <br /><br />
-        <input type="text" name="first-name" id="first-name" />
+        <input type="text" name="fname" id="first-name" />
         <br /><br /><br />
 
         <label for="last-name">Last Name : </label>
         <br /><br />
-        <input type="text" name="last-name" id="last-name" />
+        <input type="text" name="lname" id="last-name" />
         <br /><br /><br />
 
         <label for="input-gender">Gender:</label><br /><br />
